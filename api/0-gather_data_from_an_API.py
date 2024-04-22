@@ -9,18 +9,15 @@ if __name__ == "__main__":
 
     import requests
     from sys import argv
-    
-    try:
-        user_name = requests.get(f"https://jsonplaceholder.\
-typicode.com/users?id={argv[1]}").json()[0]['name']
-    except Exception:
-        user_name = ""
-    
-    try:
-        todos = requests.get(f"https://jsonplaceholder.typicode.\
+
+    if len(argv) < 2:
+        exit()
+
+    user_name = requests.get(f"https://jsonplaceholder.\
+typicode.com/users/{argv[1]}").json()['name']
+
+    todos = requests.get(f"https://jsonplaceholder.typicode.\
 com/todos?userId={argv[1]}").json()
-    except Exception:
-        todos = []
 
     total = len(todos)
     completed = 0
