@@ -19,6 +19,6 @@ for i in todos:
         completed += 1
         titles += "\t" + i['title'] + "\n"
 
-print("Employee {} is done with tasks({}/{})"
+print("Employee {} is done with tasks({}/{}):"
       .format(user_name, completed, total))
 print(titles[:-1])
