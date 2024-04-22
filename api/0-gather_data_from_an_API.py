@@ -29,4 +29,6 @@ com/todos?userId={argv[1]}").json()
 
     print("Employee {} is done with tasks({}/{}):"
           .format(user_name, completed, total))
-    print(titles[:-1])
+
+    if titles != "":
+        print(titles[:-1])
