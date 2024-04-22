@@ -14,7 +14,7 @@ if __name__ == "__main__":
         exit()
 
     user_name = requests.get(f"https://jsonplaceholder.\
-typicode.com/users/{argv[1]}").json()['name']
+typicode.com/users/{argv[1]}").json().get('name')
 
     todos = requests.get(f"https://jsonplaceholder.typicode.\
 com/todos?userId={argv[1]}").json()
@@ -25,7 +25,7 @@ com/todos?userId={argv[1]}").json()
     for i in todos:
         if i['completed']:
             completed += 1
-            titles += "\t" + i['title'] + "\n"
+            titles += "\t" + i.get('title') + "\n"
 
     print("Employee {} is done with tasks({}/{}):"
           .format(user_name, completed, total))
