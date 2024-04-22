@@ -25,7 +25,7 @@ com/todos?userId={argv[1]}").json()
     for i in todos:
         if i['completed']:
             completed += 1
-            titles += "\t" + i.get('title') + "\n"
+            titles += "\t " + i.get('title') + "\n"
 
     print("Employee {} is done with tasks({}/{}):"
           .format(user_name, completed, total))
