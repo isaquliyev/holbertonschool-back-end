@@ -11,7 +11,7 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    if argv != 2:
+    if len(argv) < 2:
         exit()
 
     todos = requests.get(f"https://jsonplaceholder.typicode.\
