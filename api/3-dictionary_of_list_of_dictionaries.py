@@ -11,7 +11,6 @@ if __name__ == "__main__":
     import requests
 
     new_dict = {}
-    new_list = []
 
     user_list = requests.get(f"https://jsonplaceholder.\
 typicode.com/users/").json()
@@ -19,6 +18,7 @@ typicode.com/users/").json()
     for user in user_list:
         todos = requests.get(f"https://jsonplaceholder.typicode.\
 com/todos?userId={user.get('id')}").json()
+        new_list = []
         for todo in todos:
             new_list.append({'username': user.get('username'),
                              'task': todo.get('title'),
