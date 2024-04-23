@@ -10,7 +10,7 @@ if __name__ == "__main__":
     import csv
     import requests
     from sys import argv
-    
+
     if argv != 2:
         exit()
 
@@ -22,4 +22,5 @@ typicode.com/users/{argv[1]}").json().get('username')
     csv_writer = csv.writer(open(f'{argv[1]}.csv', 'w'), quoting=csv.QUOTE_ALL)
 
     for todo in todos:
-        csv_writer.writerow([todo.get('userId'), username, todo.get('completed'), todo.get('title')])
+        csv_writer.writerow([todo.get('userId'), username,
+                             todo.get('completed'), todo.get('title')])
